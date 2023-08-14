@@ -1,23 +1,48 @@
-.todo {
+.flag {
+	color: lightgray;
+	margin-right: .5rem;
 	font-size: 1.4rem;
-	color: blueviolet;
 }
 
-.todo:hover {
-	color: violet;
-	background-color: lightpink;
-	transition: all 0.2s ease;
+.flag:hover {
+	color: gray;
 }
 
-.completed {
+.flagged span { 
+	color: orange;
+}
+
+.complete .task {
+	color: gray;
 	text-decoration: line-through;
-	color: lightgrey;
 }
 
-h1 { 
-	text-align: center;
-	transition: all 0.5s ease;
- }
+ul {
+	list-style-type: none;
+	padding-inline-start: 0.5rem;
+	margin-block-start: 0.5rem;
+}
 
-.big { transform: scale(2); color: green; }
-.small { transform: scale(0.5); color: red; }
+li {
+	color: #444;
+}
+
+li:hover {
+	color:black;
+}
+
+li button {
+	margin-left: 0.5rem;
+}
+
+h4 {
+	margin-block-end: 0;
+}
+
+body {
+	font-family: Helvetica;
+}
+
+input[type=checkbox] {
+	margin-right: 0.5rem;
+}

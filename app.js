@@ -1,25 +1,72 @@
 
+// const newItemForm = document.querySelector('#addItem');
+// const taskList = document.querySelector('#actionItems');
+// const removeButtons = document.querySelectorAll('li button');
+// const actionItem = document.querySelector('input[name="actionItemName"]');
+// for (let btn of removeButtons) {
+// 	btn.addEventListener('click', function(e) {
+// 		e.target.parentElement.remove();
+// 	})
+// }
 
-function toggleAllTodos() {
-	const todos = document.querySelectorAll("li");
+// newItemForm.addEventListener('submit', function(e, ) {
+// 	e.preventDefault();
+// 	const inboxItem = addItemToInbox(actionItem.value);
+// });
 
-	for (let li of todos) {
-		li.classList.toggle("completed");
+// function addItemToInbox(name) {
+// 	const newActionItem = document.createElement('li');
+// 	const actionItemDelete = document.createElement('button');
+// 	actionItemDelete.innerText = 'x';
+	
+// 	newActionItem.innerText = name;
+// 	newActionItem.value = '';
+// 	const newTask = taskList.appendChild(newActionItem);
+// 	newTask.appendChild(actionItemDelete);
+	
+	
+// }
+
+
+const newItemForm = document.querySelector('#addItem');
+const taskList = document.querySelector('#actionItems');
+const actionItem = document.querySelector('input[name="actionItemName"]');
+
+taskList.addEventListener('click', function(event) {
+	if (event.target.tagName === 'BUTTON') {
+		event.target.parentElement.remove();
 	}
-}
-
-function toggleTodo() {
-	this.classList.toggle("completed");
-}
-
-const h1 = document.querySelector("h1");
-
-setInterval(function() {
-	if (h1.classList.contains("big")) {
-		h1.innerText = "Sad";
-	} else {
-		h1.innerText = "Happy";
+	if (event.target.tagName === 'SPAN') {
+		event.target.parentElement.classList.toggle('flagged');
 	}
-	h1.classList.toggle("big");
-	h1.classList.toggle("small");
-}, 1000);
+	if (event.target.tagName === 'INPUT') {
+		event.target.parentElement.classList.toggle('complete');
+	}
+})
+
+
+newItemForm.addEventListener('submit', function(e) {
+	e.preventDefault();
+	const inboxItem = addItemToInbox(actionItem.value);
+});
+
+function addItemToInbox(name) {
+	const newActionItem = document.createElement('li');
+	const actionItemName = document.createElement('span');
+	const actionItemDelete = document.createElement('button');
+	const flag = document.createElement('span');
+	flag.innerHTML = '&#9873;'
+	flag.classList.add('flag');
+	actionItemDelete.innerText = 'x';
+	actionItemName.innerText = name;
+	actionItem.value = '';
+	const newTask = taskList.appendChild(newActionItem);
+	const actionItemNameText = newTask.appendChild(actionItemName);
+	actionItemNameText.classList.add('task');
+	newTask.appendChild(actionItemDelete);
+	
+	newTask.prepend(flag);
+	const checkbox = document.createElement('input');
+	checkbox.type = 'checkbox';
+	newTask.prepend(checkbox);
+}
