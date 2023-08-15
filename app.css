@@ -5,16 +5,20 @@
 }
 
 .flag:hover {
-	color: gray;
+	color: orange;
 }
 
-.flagged span { 
+.flagged .flag { 
 	color: orange;
 }
 
 .complete .task {
 	color: gray;
 	text-decoration: line-through;
+}
+
+li:hover button {
+	visibility: visible;
 }
 
 ul {
@@ -28,11 +32,12 @@ li {
 }
 
 li:hover {
-	color:black;
+	color:darkmagenta;
 }
 
 li button {
 	margin-left: 0.5rem;
+	visibility: hidden;
 }
 
 h4 {
@@ -46,3 +51,13 @@ body {
 input[type=checkbox] {
 	margin-right: 0.5rem;
 }
+
+button {
+	background: none;
+	border: none;
+
+}
+
+.empty li {
+	display: block;
+ }

@@ -2,22 +2,17 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>ToDo App</title>
 	<link href="app.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Tidylist</h1>
-	<form id="addItem">
-		<input type="text" placeholder="Add item to inbox" name="actionItemName">
+	<form id="taskForm">
+		<input type="text" placeholder="Add task" name="taskName">
 		<input type="submit">
 	</form>
 	<section id="content">
-		<h4>Inbox</h4>
-		<ul id="actionItems">
-			<li><input type="checkbox"><span class="flag">&#9873;</span><span class="task">Send brand brief to Alex</span><button>x</button></li>
-			<li><input type="checkbox"><span class="flag">&#9873;</span><span class="task">Get to Inbox Zero</span><button>x</button></li>
-			<li><input type="checkbox"><span class="flag">&#9873;</span><span class="task">Organize schedule for weekend</span><button>x</button></li>
+		<ul id="taskList">
 		</ul>
 	</section>
 	<script src="app.js"></script>
